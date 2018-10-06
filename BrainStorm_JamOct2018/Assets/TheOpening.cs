@@ -14,6 +14,7 @@ public class TheOpening : MonoBehaviour {
 	public GameObject nuagered;
 
 	public GameObject player;
+	public GameObject fakeplayerintro;
 
 	Animator animYellow1;
 	Animator animYellow2;
@@ -23,6 +24,9 @@ public class TheOpening : MonoBehaviour {
 	Animator animGreen2;
 	Animator animPink;
 	Animator animRed;
+
+	SpriteRenderer realPlayerSprite;
+	Collider2D realPlayerCollider;
 
 	ControlsPlayer controlsplayerscript;
 
@@ -40,6 +44,9 @@ public class TheOpening : MonoBehaviour {
 		controlsplayerscript = player.GetComponent<ControlsPlayer> ();
 
 		StartCoroutine (StartOfTheGame ());
+
+		realPlayerSprite = player.GetComponent<SpriteRenderer> ();
+		realPlayerCollider = player.GetComponent<Collider2D> ();
 	}
 	
 	// Update is called once per frame
@@ -50,6 +57,9 @@ public class TheOpening : MonoBehaviour {
 	IEnumerator StartOfTheGame(){
 		controlsplayerscript.enabled = false;
 		yield return new WaitForSeconds (5f);
+		realPlayerSprite.enabled = true;
+		realPlayerCollider.enabled = true;
+		fakeplayerintro.SetActive (false);
 		controlsplayerscript.enabled = true;
 		animYellow1.SetBool ("Run", true);
 		animYellow2.SetBool ("Run", true);

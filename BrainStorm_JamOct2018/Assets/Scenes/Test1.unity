@@ -1028,6 +1028,16 @@ Prefab:
       propertyPath: Bully1
       value: 
       objectReference: {fileID: 1256551880}
+    - target: {fileID: 114613922820030380, guid: 039799704c5a7456c8abc27dc20ab9be,
+        type: 2}
+      propertyPath: triggerGauche
+      value: 
+      objectReference: {fileID: 1256368274}
+    - target: {fileID: 114613922820030380, guid: 039799704c5a7456c8abc27dc20ab9be,
+        type: 2}
+      propertyPath: triggerDroite
+      value: 
+      objectReference: {fileID: 565369829}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 039799704c5a7456c8abc27dc20ab9be, type: 2}
   m_IsPrefabParent: 0
@@ -1320,6 +1330,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   profile: {fileID: 11400000, guid: 46dfaef8f796c6747a4e33aa7404f48e, type: 2}
+--- !u!1 &565369829 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1659868515575744, guid: 713aa8ffe64514d86995a497581978e9,
+    type: 2}
+  m_PrefabInternal: {fileID: 2082715003}
 --- !u!1 &621634829
 GameObject:
   m_ObjectHideFlags: 0
@@ -1952,7 +1967,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 75d4cce28832f594bb95d226a2341bda, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2034,11 +2049,84 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 749581955}
+--- !u!1 &874304651
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 874304652}
+  m_Layer: 0
+  m_Name: RespawnBully2
+  m_TagString: Untagged
+  m_Icon: {fileID: -1577725955494882426, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &874304652
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 874304651}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 46.68631, y: 52.81255, z: 0}
+  m_LocalScale: {x: 0.52080464, y: 0.52080464, z: 0.52080464}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &929981160 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1433444980592698, guid: 82c82a3e995ea44d28045c54871d4c5c,
     type: 2}
   m_PrefabInternal: {fileID: 1861799406}
+--- !u!114 &929981164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 929981160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03c95c3afc3940e42b81b394c5d3f550, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bully1: {fileID: 1256551880}
+  bully2: {fileID: 929981160}
+  player: {fileID: 406390010}
+  respawnpointbully1: {fileID: 1488712183}
+  respawnpointbully2: {fileID: 874304651}
+  respawnpointplayer: {fileID: 1431119304}
+  triggergauche: {fileID: 1256368274}
+  triggerdroite: {fileID: 565369829}
+  fondNoirRespawn: {fileID: 676805872}
+--- !u!61 &929981165
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 929981160}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.99326944, y: 0.056225777}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.75, y: 5.5}
+    newSize: {x: 2.75, y: 5.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 10.808755, y: 6.586996}
+  m_EdgeRadius: 0
 --- !u!1 &969293143 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1403609890369174, guid: 9889ca90e5a424bb19a85199f4a7082b,
@@ -2538,11 +2626,89 @@ EdgeCollider2D:
   - {x: -8.17349, y: -7.011371}
   - {x: -6.774822, y: 2.1798692}
   - {x: -4.994934, y: 3.221389}
+--- !u!1 &1256368274 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1203293583706260, guid: 039799704c5a7456c8abc27dc20ab9be,
+    type: 2}
+  m_PrefabInternal: {fileID: 460253336}
 --- !u!1 &1256551880 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1860994782149462, guid: 4d35128afbaee4a57b10cf9de58ee6df,
     type: 2}
   m_PrefabInternal: {fileID: 17405659}
+--- !u!61 &1256551884
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1256551880}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.00000071525574, y: -0.16867352}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.75, y: 5.5}
+    newSize: {x: 2.75, y: 5.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 8.372395, y: 6.6619635}
+  m_EdgeRadius: 0
+--- !u!114 &1256551885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1256551880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03c95c3afc3940e42b81b394c5d3f550, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bully1: {fileID: 1256551880}
+  bully2: {fileID: 929981160}
+  player: {fileID: 406390010}
+  respawnpointbully1: {fileID: 1488712183}
+  respawnpointbully2: {fileID: 874304651}
+  respawnpointplayer: {fileID: 1431119304}
+  triggergauche: {fileID: 1256368274}
+  triggerdroite: {fileID: 565369829}
+  fondNoirRespawn: {fileID: 676805872}
+--- !u!1 &1431119304
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1431119305}
+  m_Layer: 0
+  m_Name: CheckpointPlayer_RespawnZone3
+  m_TagString: Untagged
+  m_Icon: {fileID: -6488666005112524639, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1431119305
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1431119304}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 41.89, y: 46.88, z: -0.12166492}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1436206922 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1008046740995784, guid: 9889ca90e5a424bb19a85199f4a7082b,
@@ -2629,6 +2795,34 @@ GameObject:
   m_PrefabParentObject: {fileID: 1268230952799760, guid: 9889ca90e5a424bb19a85199f4a7082b,
     type: 2}
   m_PrefabInternal: {fileID: 2141801172}
+--- !u!1 &1488712183
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1488712184}
+  m_Layer: 0
+  m_Name: RespawnBully1
+  m_TagString: Untagged
+  m_Icon: {fileID: 7240890024493199768, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1488712184
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1488712183}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 43.952133, y: 52.698627, z: 0}
+  m_LocalScale: {x: 0.52080464, y: 0.52080464, z: 0.52080464}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1518211389
 GameObject:
   m_ObjectHideFlags: 0
@@ -2646,7 +2840,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1518211390
 Transform:
   m_ObjectHideFlags: 0
@@ -3069,6 +3263,16 @@ Prefab:
       propertyPath: Bully2
       value: 
       objectReference: {fileID: 929981160}
+    - target: {fileID: 114438849908307502, guid: 713aa8ffe64514d86995a497581978e9,
+        type: 2}
+      propertyPath: triggerGauche
+      value: 
+      objectReference: {fileID: 1256368274}
+    - target: {fileID: 114438849908307502, guid: 713aa8ffe64514d86995a497581978e9,
+        type: 2}
+      propertyPath: triggerDroite
+      value: 
+      objectReference: {fileID: 565369829}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 713aa8ffe64514d86995a497581978e9, type: 2}
   m_IsPrefabParent: 0

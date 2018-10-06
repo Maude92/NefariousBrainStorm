@@ -8,18 +8,26 @@ public class ControlsPlayer : MonoBehaviour {
 
 	public float maxSpeed = 3f;
 	public bool modePause;
+	//public int nombrederespiration;
 	public GameObject canvasPause;
+	public GameObject aura;
+	public GameObject triggerZone1;
 
-	LevelMenuScript levelmenuscript;
+//	LevelMenuScript levelmenuscript;
+	AuraScript aurascript;
+	Animator animaura;
 
 
 	// Use this for initialization
 	void Start () {
 		rbPlayer = GetComponent<Rigidbody2D> ();
 
-		levelmenuscript = canvasPause.GetComponent<LevelMenuScript> ();
+	//	levelmenuscript = canvasPause.GetComponent<LevelMenuScript> ();
+		aurascript = triggerZone1.GetComponent<AuraScript> ();
+		animaura = aura.GetComponent<Animator> ();
 
 		modePause = false;
+		//nombrederespiration = 0;
 		Time.timeScale = 1;
 	}
 	
@@ -37,32 +45,32 @@ public class ControlsPlayer : MonoBehaviour {
 
 	void UserInputs() {
 
-	// A button
-		if (Input.GetButtonDown ("360_AButton")){
+		// A button
+		if (Input.GetButtonDown ("360_AButton")) {
 			print ("Je pèse sur le bouton A");
 		}
 
-	// B button
-		if (Input.GetButtonDown ("360_BButton")){
+		// B button
+		if (Input.GetButtonDown ("360_BButton")) {
 			print ("Je pèse sur le bouton B");
 		}
 
-	// X button
-		if (Input.GetButtonDown ("360_XButton")){
+		// X button
+		if (Input.GetButtonDown ("360_XButton")) {
 			print ("Je pèse sur le bouton X");
 		}
 
-	// Y button
-		if (Input.GetButtonDown ("360_YButton")){
+		// Y button
+		if (Input.GetButtonDown ("360_YButton")) {
 			print ("Je pèse sur le bouton Y");
 		}
 
-	// Back button
-		if (Input.GetButtonDown("360_BackButton")){
+		// Back button
+		if (Input.GetButtonDown ("360_BackButton")) {
 			print ("Je pèse sur le bouton Back");
 		}
 
-	// Start button
+		// Start button
 		if (Input.GetButtonDown ("360_StartButton") || Input.GetKeyDown (KeyCode.Escape)) {
 			print ("Je pèse sur Start");
 			modePause = !modePause;
@@ -81,15 +89,25 @@ public class ControlsPlayer : MonoBehaviour {
 		}
 
 
-	// Trigger Left
-		if (Input.GetAxis("360_TriggerL") > 0.001) {
-			print ("Je pèse sur le Trigger Gauche (L) ");
+		// Triggers
+		if ((Input.GetAxis ("360_TriggerL") > 0.001 && Input.GetAxis ("360_TriggerR") > 0.001)) {
+			print ("Je pèse sur les Triggers ");
+			if (aurascript.canBreath == true) {
+				print ("Je suis censé inspirer");
+				animaura.SetBool ("Inspire", true);
+			} else {
+				print ("T'as pas à respirer maintenant");
+				animaura.SetBool ("Inspire", false);
+			}
+		} else if ((Input.GetAxis ("360_TriggerL") < 0.001 && Input.GetAxis ("360_TriggerR") < 0.001)) {
+			if (aurascript.canBreath == true) {
+				print ("Je suis censé expirer");
+				animaura.SetBool ("Inspire", false);
+			//	animaura.SetInteger ("Respiration", nombrederespiration);
+			} else {
+				print ("T'as pas à respirer maintenant");
+				animaura.SetBool ("Inspire", false);
+			}
 		}
-
-	// Trigger Right
-		if (Input.GetAxis ("360_TriggerR") > 0.001){
-			print ("Je pèse sur le Trigger Droit (R)");
-		}
-
 	}
 }

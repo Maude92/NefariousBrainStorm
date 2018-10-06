@@ -46,22 +46,22 @@ public class ControlsPlayer : MonoBehaviour {
 	void UserInputs() {
 
 		// A button
-		if (Input.GetButtonDown ("360_AButton")) {
+		if (Input.GetButtonDown ("360_AButton") || Input.GetKeyDown (KeyCode.Q)) {
 			print ("Je pèse sur le bouton A");
 		}
 
 		// B button
-		if (Input.GetButtonDown ("360_BButton")) {
+		if (Input.GetButtonDown ("360_BButton") || Input.GetKeyDown (KeyCode.W)) {
 			print ("Je pèse sur le bouton B");
 		}
 
 		// X button
-		if (Input.GetButtonDown ("360_XButton")) {
+		if (Input.GetButtonDown ("360_XButton") || Input.GetKeyDown (KeyCode.E)) {
 			print ("Je pèse sur le bouton X");
 		}
 
 		// Y button
-		if (Input.GetButtonDown ("360_YButton")) {
+		if (Input.GetButtonDown ("360_YButton") || Input.GetKeyDown (KeyCode.R)) {
 			print ("Je pèse sur le bouton Y");
 		}
 

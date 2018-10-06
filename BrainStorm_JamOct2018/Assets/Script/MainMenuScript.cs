@@ -9,11 +9,6 @@ public class MainMenuScript : MonoBehaviour {
 	public GameObject canvasLearnMore;
 	public GameObject canvasCredits;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-
 
 	// POUR COMMENCER LE JEU
 	public void StartGame(){

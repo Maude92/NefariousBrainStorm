@@ -7,10 +7,20 @@ public class ControlsPlayer : MonoBehaviour {
 	Rigidbody2D rbPlayer;
 
 	public float maxSpeed = 3f;
+	public bool modePause;
+	public GameObject canvasPause;
+
+	LevelMenuScript levelmenuscript;
+
 
 	// Use this for initialization
 	void Start () {
 		rbPlayer = GetComponent<Rigidbody2D> ();
+
+		levelmenuscript = canvasPause.GetComponent<LevelMenuScript> ();
+
+		modePause = false;
+		Time.timeScale = 1;
 	}
 	
 	// Update is called once per frame
@@ -53,9 +63,23 @@ public class ControlsPlayer : MonoBehaviour {
 		}
 
 	// Start button
-		if (Input.GetButtonDown ("360_StartButton")){
+		if (Input.GetButtonDown ("360_StartButton") || Input.GetKeyDown (KeyCode.Escape)) {
 			print ("Je pèse sur Start");
+			modePause = !modePause;
+
+			if (modePause == true) {
+				//controlsplayerscript.enabled = false;
+				// désactiver UI inutile
+				canvasPause.SetActive (true);
+				Time.timeScale = 0;
+			} else if (modePause == false) {
+				Time.timeScale = 1;
+				canvasPause.SetActive (false);
+				// réactiver canvas utile
+				//controlsplayerscript.enabled = true;
+			}
 		}
+
 
 	// Trigger Left
 		if (Input.GetAxis("360_TriggerL") > 0.001) {

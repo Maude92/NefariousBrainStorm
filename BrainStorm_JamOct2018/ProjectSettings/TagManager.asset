@@ -6,6 +6,7 @@ TagManager:
   tags:
   - student
   - Stop
+  - Car
   layers:
   - Default
   - TransparentFX

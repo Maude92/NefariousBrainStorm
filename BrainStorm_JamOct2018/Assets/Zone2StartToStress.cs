@@ -27,10 +27,10 @@ public class Zone2StartToStress : MonoBehaviour {
 		//animTrigger = InstructionRespiration.GetComponent<Animator> ();
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+//	// Update is called once per frame
+//	void Update () {
+//		
+//	}
 
 	void OnTriggerEnter2D (Collider2D other){
 		if (other.gameObject.tag == "Car") {

@@ -320,7 +320,7 @@ Transform:
   m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &152454984
 GameObject:
@@ -1136,7 +1136,7 @@ Transform:
   m_Children:
   - {fileID: 317901817}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &406390014
 Rigidbody2D:
@@ -1326,6 +1326,173 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 039799704c5a7456c8abc27dc20ab9be, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &472056351
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 472056353}
+  - component: {fileID: 472056352}
+  m_Layer: 0
+  m_Name: GameMaster
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &472056352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 472056351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bef3219777636a4784b047bb80f3d2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: SFX_BoutonA
+    clip: {fileID: 8300000, guid: 2a12ae83301498e44b9ae01b23346e73, type: 3}
+    volume: 0.5
+    pitch: 1
+    randomVolume: 0.1
+    randomPitch: 0.1
+  - name: SFX_BoutonB
+    clip: {fileID: 8300000, guid: fdfae5bd8cf4c654f82952de84011522, type: 3}
+    volume: 0.5
+    pitch: 1
+    randomVolume: 0.1
+    randomPitch: 0.1
+  - name: SFX_BoutonX
+    clip: {fileID: 8300000, guid: 0d02e4a8d9f97684dbdf7d39b42f247d, type: 3}
+    volume: 0.5
+    pitch: 1
+    randomVolume: 0.1
+    randomPitch: 0.1
+  - name: SFX_BoutonY
+    clip: {fileID: 8300000, guid: c7d9af0e5ed0dad40bb3bc926e7cefc6, type: 3}
+    volume: 0.5
+    pitch: 1
+    randomVolume: 0.1
+    randomPitch: 0.1
+  - name: SFX_Expire
+    clip: {fileID: 8300000, guid: f2ce78c15df94544caf51c051762fa5d, type: 3}
+    volume: 0.5
+    pitch: 1
+    randomVolume: 0.1
+    randomPitch: 0
+  - name: SFX_RespirationFail
+    clip: {fileID: 8300000, guid: b20d1e10e1ec9bb40b94d26742acdb55, type: 3}
+    volume: 0.5
+    pitch: 1
+    randomVolume: 0
+    randomPitch: 0
+  - name: SFX_Inspire
+    clip: {fileID: 8300000, guid: 9e33948453378b940b2587a5d973c517, type: 3}
+    volume: 0.5
+    pitch: 1
+    randomVolume: 0.1
+    randomPitch: 0
+  - name: SFX_RespirationWin
+    clip: {fileID: 8300000, guid: 9f17484dc1bef5d4b873ee5998bbef1c, type: 3}
+    volume: 0.5
+    pitch: 1
+    randomVolume: 0
+    randomPitch: 0
+  - name: SFX_BullyFollow
+    clip: {fileID: 8300000, guid: 9ed36479273de474f8e99fc68af377ba, type: 3}
+    volume: 0.5
+    pitch: 1
+    randomVolume: 0
+    randomPitch: 0
+  - name: SFX_BullyFootstepLoop
+    clip: {fileID: 8300000, guid: 956d3acc260ad594bb219c5da78e54e9, type: 3}
+    volume: 0.5
+    pitch: 1
+    randomVolume: 0
+    randomPitch: 0
+  - name: SFX_Footsteps
+    clip: {fileID: 8300000, guid: 25c8e0664220ffb4688d97fdcad0b854, type: 3}
+    volume: 0.5
+    pitch: 1
+    randomVolume: 0
+    randomPitch: 0
+  - name: SFX_FootstepsEffet
+    clip: {fileID: 8300000, guid: 46c4e3d2d38e3ea4990ba4a9f390ad11, type: 3}
+    volume: 0.5
+    pitch: 1
+    randomVolume: 0
+    randomPitch: 0
+  - name: SFX_MenuButton
+    clip: {fileID: 8300000, guid: 324244cd54a6afe49b017cb34e01bb31, type: 3}
+    volume: 0.5
+    pitch: 1
+    randomVolume: 0
+    randomPitch: 0
+  - name: SFX_MenuStart
+    clip: {fileID: 8300000, guid: cb9c3c0d168ba1a41b8832ae6175c1cb, type: 3}
+    volume: 0.5
+    pitch: 1
+    randomVolume: 0
+    randomPitch: 0
+  - name: SFX_TicTac
+    clip: {fileID: 8300000, guid: 2e0c08ad061e98c4dbf1d9579fdf8d2e, type: 3}
+    volume: 0.5
+    pitch: 1
+    randomVolume: 0
+    randomPitch: 0
+  - name: SFX_TicTacEffet1
+    clip: {fileID: 8300000, guid: f2a1ac67a335a8043a408357f6f60003, type: 3}
+    volume: 0.5
+    pitch: 1
+    randomVolume: 0
+    randomPitch: 0
+  - name: SFX_TicTacEffet2
+    clip: {fileID: 8300000, guid: 32ab8243e93b5d94a8ca7345b9c50e9d, type: 3}
+    volume: 0.5
+    pitch: 1
+    randomVolume: 0
+    randomPitch: 0
+  - name: SFX_Voiture
+    clip: {fileID: 8300000, guid: 37f0942ddace90c4686751bb1c390159, type: 3}
+    volume: 0.5
+    pitch: 1
+    randomVolume: 0
+    randomPitch: 0
+  - name: SFX_VoitureAb
+    clip: {fileID: 8300000, guid: 795c30985a6a3394d93d17d1c92132de, type: 3}
+    volume: 0.5
+    pitch: 1
+    randomVolume: 0
+    randomPitch: 0
+  - name: SFX_VoitureRapide
+    clip: {fileID: 8300000, guid: 26ad5e98fa2cf1a418f9615d9355b8c3, type: 3}
+    volume: 0.5
+    pitch: 1
+    randomVolume: 0
+    randomPitch: 0
+  - name: SFX_VoitureAbRapide
+    clip: {fileID: 8300000, guid: c825d30f28a0bb24eb2e74027c0d2b87, type: 3}
+    volume: 0.5
+    pitch: 1
+    randomVolume: 0
+    randomPitch: 0
+--- !u!4 &472056353
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 472056351}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 43.05336, y: 28.445099, z: -1.015625}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &520437325
 GameObject:
   m_ObjectHideFlags: 0
@@ -1500,7 +1667,7 @@ Transform:
   m_Children:
   - {fileID: 152454985}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &537058344
 GameObject:
@@ -1586,7 +1753,7 @@ Transform:
   - {fileID: 2124799775}
   - {fileID: 676805873}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &537058349
 MonoBehaviour:
@@ -2266,7 +2433,7 @@ Transform:
   m_LocalScale: {x: 2.5, y: 2.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &676805872
 GameObject:
@@ -2567,7 +2734,7 @@ Transform:
   m_LocalScale: {x: 0.52080464, y: 0.52080464, z: 0.52080464}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &898184892
 GameObject:
@@ -3027,7 +3194,7 @@ Transform:
   - {fileID: 1109224525}
   - {fileID: 1947934956}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1180900436
 GameObject:
@@ -3284,7 +3451,7 @@ Transform:
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!68 &1238716664
 EdgeCollider2D:
@@ -3465,7 +3632,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1436206922 stripped
 GameObject:
@@ -3579,7 +3746,7 @@ Transform:
   m_LocalScale: {x: 0.52080464, y: 0.52080464, z: 0.52080464}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1518211389
 GameObject:
@@ -3741,7 +3908,7 @@ Transform:
   m_Children:
   - {fileID: 212354902}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1846415598
 GameObject:
@@ -3771,7 +3938,7 @@ Transform:
   - {fileID: 2126723510}
   - {fileID: 75234757}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1860244593
 GameObject:
@@ -3920,7 +4087,7 @@ Transform:
   - {fileID: 898184893}
   - {fileID: 1309501013}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1947934955
 GameObject:
@@ -4176,7 +4343,7 @@ Transform:
   m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!95 &2104720449
 Animator:
@@ -4412,7 +4579,7 @@ Transform:
   - {fileID: 929981163}
   - {fileID: 1256551883}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2141801172
 Prefab:
@@ -4451,7 +4618,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4024706224687320, guid: 9889ca90e5a424bb19a85199f4a7082b, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 70221817369823300, guid: 9889ca90e5a424bb19a85199f4a7082b,
         type: 2}

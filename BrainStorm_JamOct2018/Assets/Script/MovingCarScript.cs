@@ -8,19 +8,26 @@ public class MovingCarScript : MonoBehaviour {
 
 	Animator animcar;
 
+	private AudioManager audioManager;
+
+	Collider2D thiscollider;
+
 	// Use this for initialization
 	void Start () {
+		audioManager = AudioManager.instance;
+		if (audioManager == null) {
+			Debug.LogError ("Attention, le AudioManager n'a pas été trouvé dans la scène.");}
+
 		animcar = car.GetComponent<Animator> ();
+		thiscollider = GetComponent<Collider2D> ();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
 
 	void OnTriggerEnter2D(Collider2D other){
 		if (other.gameObject.tag == "Player") {
 			animcar.SetBool ("Move", true);
+			audioManager.PlaySound ("SFX_VoitureRapide");
+			thiscollider.enabled = false;
 		}
 	}
 }

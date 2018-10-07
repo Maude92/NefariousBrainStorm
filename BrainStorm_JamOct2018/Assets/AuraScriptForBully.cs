@@ -51,9 +51,10 @@ public class AuraScriptForBully : MonoBehaviour {
 		animAura.SetBool ("Aura", true);
 		animcadre.SetBool ("Danger", true);
 		canBreath = true;
-		//controlsplayerscript.maxSpeed = 0.5f;
-		yield return new WaitForSeconds (15f);
+		controlsplayerscript.maxSpeed = 2.8f;
+		yield return new WaitForSeconds (13f);
 		StartCoroutine (GoBackToNormalSpeed());
+		canBreath = false;
 		//audioManager.PlaySound ("SFX_RespirationWin");
 		canBreath = false;
 		animAura.SetBool ("Aura", false);
@@ -61,6 +62,7 @@ public class AuraScriptForBully : MonoBehaviour {
 	}
 
 	IEnumerator GoBackToNormalSpeed (){
+		canBreath = false;
 		controlsplayerscript.maxSpeed = 0.6f;
 		yield return new WaitForSeconds (0.1f);
 		controlsplayerscript.maxSpeed = 0.7f;

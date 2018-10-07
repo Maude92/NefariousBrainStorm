@@ -70,6 +70,7 @@ public class MovingCarScript : MonoBehaviour {
 	}
 
 	IEnumerator GoBackToNormalSpeed (){
+		canBreath = false;
 		controlsplayerscript.maxSpeed = 0.6f;
 		yield return new WaitForSeconds (0.1f);
 		controlsplayerscript.maxSpeed = 0.7f;

@@ -1,0 +1,180 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1984498485612780}
+  m_IsPrefabParent: 1
+--- !u!1 &1984498485612780
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4813464931557722}
+  - component: {fileID: 114874985355165080}
+  m_Layer: 0
+  m_Name: GameMaster
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4813464931557722
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1984498485612780}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 43.05336, y: 28.445099, z: -1.015625}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114874985355165080
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1984498485612780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bef3219777636a4784b047bb80f3d2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: SFX_BoutonA
+    clip: {fileID: 8300000, guid: 2a12ae83301498e44b9ae01b23346e73, type: 3}
+    volume: 0.5
+    pitch: 1
+    randomVolume: 0.1
+    randomPitch: 0.1
+  - name: SFX_BoutonB
+    clip: {fileID: 8300000, guid: fdfae5bd8cf4c654f82952de84011522, type: 3}
+    volume: 0.5
+    pitch: 1
+    randomVolume: 0.1
+    randomPitch: 0.1
+  - name: SFX_BoutonX
+    clip: {fileID: 8300000, guid: 0d02e4a8d9f97684dbdf7d39b42f247d, type: 3}
+    volume: 0.5
+    pitch: 1
+    randomVolume: 0.1
+    randomPitch: 0.1
+  - name: SFX_BoutonY
+    clip: {fileID: 8300000, guid: c7d9af0e5ed0dad40bb3bc926e7cefc6, type: 3}
+    volume: 0.5
+    pitch: 1
+    randomVolume: 0.1
+    randomPitch: 0.1
+  - name: SFX_Expire
+    clip: {fileID: 8300000, guid: f2ce78c15df94544caf51c051762fa5d, type: 3}
+    volume: 0.5
+    pitch: 1
+    randomVolume: 0.1
+    randomPitch: 0
+  - name: SFX_RespirationFail
+    clip: {fileID: 8300000, guid: b20d1e10e1ec9bb40b94d26742acdb55, type: 3}
+    volume: 0.5
+    pitch: 1
+    randomVolume: 0
+    randomPitch: 0
+  - name: SFX_Inspire
+    clip: {fileID: 8300000, guid: 9e33948453378b940b2587a5d973c517, type: 3}
+    volume: 0.5
+    pitch: 1
+    randomVolume: 0.1
+    randomPitch: 0
+  - name: SFX_RespirationWin
+    clip: {fileID: 8300000, guid: 9f17484dc1bef5d4b873ee5998bbef1c, type: 3}
+    volume: 0.5
+    pitch: 1
+    randomVolume: 0
+    randomPitch: 0
+  - name: SFX_BullyFollow
+    clip: {fileID: 8300000, guid: 9ed36479273de474f8e99fc68af377ba, type: 3}
+    volume: 0.5
+    pitch: 1
+    randomVolume: 0
+    randomPitch: 0
+  - name: SFX_BullyFootstepLoop
+    clip: {fileID: 8300000, guid: 956d3acc260ad594bb219c5da78e54e9, type: 3}
+    volume: 0.5
+    pitch: 1
+    randomVolume: 0
+    randomPitch: 0
+  - name: SFX_Footsteps
+    clip: {fileID: 8300000, guid: 25c8e0664220ffb4688d97fdcad0b854, type: 3}
+    volume: 0.5
+    pitch: 1
+    randomVolume: 0
+    randomPitch: 0
+  - name: SFX_FootstepsEffet
+    clip: {fileID: 8300000, guid: 46c4e3d2d38e3ea4990ba4a9f390ad11, type: 3}
+    volume: 0.5
+    pitch: 1
+    randomVolume: 0
+    randomPitch: 0
+  - name: SFX_MenuButton
+    clip: {fileID: 8300000, guid: 324244cd54a6afe49b017cb34e01bb31, type: 3}
+    volume: 0.5
+    pitch: 1
+    randomVolume: 0
+    randomPitch: 0
+  - name: SFX_MenuStart
+    clip: {fileID: 8300000, guid: cb9c3c0d168ba1a41b8832ae6175c1cb, type: 3}
+    volume: 0.5
+    pitch: 1
+    randomVolume: 0
+    randomPitch: 0
+  - name: SFX_TicTac
+    clip: {fileID: 8300000, guid: 2e0c08ad061e98c4dbf1d9579fdf8d2e, type: 3}
+    volume: 0.5
+    pitch: 1
+    randomVolume: 0
+    randomPitch: 0
+  - name: SFX_TicTacEffet1
+    clip: {fileID: 8300000, guid: f2a1ac67a335a8043a408357f6f60003, type: 3}
+    volume: 0.5
+    pitch: 1
+    randomVolume: 0
+    randomPitch: 0
+  - name: SFX_TicTacEffet2
+    clip: {fileID: 8300000, guid: 32ab8243e93b5d94a8ca7345b9c50e9d, type: 3}
+    volume: 0.5
+    pitch: 1
+    randomVolume: 0
+    randomPitch: 0
+  - name: SFX_Voiture
+    clip: {fileID: 8300000, guid: 37f0942ddace90c4686751bb1c390159, type: 3}
+    volume: 0.5
+    pitch: 1
+    randomVolume: 0
+    randomPitch: 0
+  - name: SFX_VoitureAb
+    clip: {fileID: 8300000, guid: 795c30985a6a3394d93d17d1c92132de, type: 3}
+    volume: 0.5
+    pitch: 1
+    randomVolume: 0
+    randomPitch: 0
+  - name: SFX_VoitureRapide
+    clip: {fileID: 8300000, guid: 26ad5e98fa2cf1a418f9615d9355b8c3, type: 3}
+    volume: 0.5
+    pitch: 1
+    randomVolume: 0
+    randomPitch: 0
+  - name: SFX_VoitureAbRapide
+    clip: {fileID: 8300000, guid: c825d30f28a0bb24eb2e74027c0d2b87, type: 3}
+    volume: 0.5
+    pitch: 1
+    randomVolume: 0
+    randomPitch: 0

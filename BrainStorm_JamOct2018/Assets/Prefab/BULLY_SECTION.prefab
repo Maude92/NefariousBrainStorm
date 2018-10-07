@@ -58,7 +58,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4802040340813878}
   m_Layer: 0
-  m_Name: BULLY_SECTION_FINAL
+  m_Name: BULLY_SECTION
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

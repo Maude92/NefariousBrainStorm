@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4691322666274932}
   - component: {fileID: 95430823870032342}
   m_Layer: 0
-  m_Name: Respiration_Instruction_Final
+  m_Name: Respiration_Instruction 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

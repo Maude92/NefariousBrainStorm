@@ -110,7 +110,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4235258241575042}
   m_Layer: 0
-  m_Name: Ecoliers_Final
+  m_Name: "E\u0301coliers 1"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

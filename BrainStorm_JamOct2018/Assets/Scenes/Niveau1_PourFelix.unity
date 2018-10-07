@@ -665,6 +665,26 @@ Transform:
   m_PrefabParentObject: {fileID: 4915589042071304, guid: af25ab7a51ea043aebb84fb20b2a6fdd,
     type: 2}
   m_PrefabInternal: {fileID: 249451552}
+--- !u!1 &249451554 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1704994992209022, guid: af25ab7a51ea043aebb84fb20b2a6fdd,
+    type: 2}
+  m_PrefabInternal: {fileID: 249451552}
+--- !u!1 &249451555 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1329628343378442, guid: af25ab7a51ea043aebb84fb20b2a6fdd,
+    type: 2}
+  m_PrefabInternal: {fileID: 249451552}
+--- !u!1 &249451556 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1301343139600302, guid: af25ab7a51ea043aebb84fb20b2a6fdd,
+    type: 2}
+  m_PrefabInternal: {fileID: 249451552}
+--- !u!1 &249451557 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1050541083455440, guid: af25ab7a51ea043aebb84fb20b2a6fdd,
+    type: 2}
+  m_PrefabInternal: {fileID: 249451552}
 --- !u!1 &314979144
 GameObject:
   m_ObjectHideFlags: 0
@@ -2562,6 +2582,26 @@ Prefab:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 114184067340743208, guid: a7ebbc1c7c50d41a387b4963dd2c487a,
+        type: 2}
+      propertyPath: BoutonA
+      value: 
+      objectReference: {fileID: 249451557}
+    - target: {fileID: 114184067340743208, guid: a7ebbc1c7c50d41a387b4963dd2c487a,
+        type: 2}
+      propertyPath: BoutonB
+      value: 
+      objectReference: {fileID: 249451556}
+    - target: {fileID: 114184067340743208, guid: a7ebbc1c7c50d41a387b4963dd2c487a,
+        type: 2}
+      propertyPath: BoutonX
+      value: 
+      objectReference: {fileID: 249451555}
+    - target: {fileID: 114184067340743208, guid: a7ebbc1c7c50d41a387b4963dd2c487a,
+        type: 2}
+      propertyPath: BoutonY
+      value: 
+      objectReference: {fileID: 249451554}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a7ebbc1c7c50d41a387b4963dd2c487a, type: 2}
   m_IsPrefabParent: 0

@@ -415,6 +415,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1648595036}
+        m_MethodName: playClipStart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &467166522
@@ -524,6 +535,53 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 537185837}
+--- !u!1001 &579993897
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4813464931557722, guid: 999a1f9df3dfcde4fa352a4d307076ee, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 43.05336
+      objectReference: {fileID: 0}
+    - target: {fileID: 4813464931557722, guid: 999a1f9df3dfcde4fa352a4d307076ee, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 28.445099
+      objectReference: {fileID: 0}
+    - target: {fileID: 4813464931557722, guid: 999a1f9df3dfcde4fa352a4d307076ee, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -1.015625
+      objectReference: {fileID: 0}
+    - target: {fileID: 4813464931557722, guid: 999a1f9df3dfcde4fa352a4d307076ee, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4813464931557722, guid: 999a1f9df3dfcde4fa352a4d307076ee, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4813464931557722, guid: 999a1f9df3dfcde4fa352a4d307076ee, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4813464931557722, guid: 999a1f9df3dfcde4fa352a4d307076ee, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4813464931557722, guid: 999a1f9df3dfcde4fa352a4d307076ee, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114874985355165080, guid: 999a1f9df3dfcde4fa352a4d307076ee,
+        type: 2}
+      propertyPath: sounds.Array.data[12].randomPitch
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 999a1f9df3dfcde4fa352a4d307076ee, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &686820459
 GameObject:
   m_ObjectHideFlags: 0
@@ -703,7 +761,7 @@ RectTransform:
   - {fileID: 686820460}
   - {fileID: 1243812804}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -889,7 +947,7 @@ RectTransform:
   - {fileID: 537185838}
   - {fileID: 2070788221}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1036,6 +1094,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1648595036}
         m_MethodName: QuitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1648595036}
+        m_MethodName: playClipButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1220,7 +1289,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1131111137
 GameObject:
@@ -1300,6 +1369,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1648595036}
         m_MethodName: Credits
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1648595036}
+        m_MethodName: playClipButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1422,6 +1502,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 737349319}
         m_MethodName: ExitCredits
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 737349319}
+        m_MethodName: playClipButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1833,6 +1924,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1648595036}
+        m_MethodName: playClipButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1605285684
@@ -1976,7 +2078,7 @@ RectTransform:
   - {fileID: 897416755}
   - {fileID: 1249401645}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2211,6 +2313,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 786134929}
         m_MethodName: ExitLearnMore
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 786134929}
+        m_MethodName: playClipButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -26,6 +26,8 @@ public class ControlsPlayer : MonoBehaviour {
 	AuraScript aurascript;
 	Animator animaura;
 
+	private AudioManager audioManager;
+
 
 	// Use this for initialization
 	void Start () {
@@ -41,6 +43,10 @@ public class ControlsPlayer : MonoBehaviour {
 
 		inspire = false;
 		//jerespire = false;
+
+		audioManager = AudioManager.instance;
+		if (audioManager == null) {
+			Debug.LogError ("Attention, le AudioManager n'a pas été trouvé dans la scène.");}
 	}
 	 
 	// Update is called once per frame
@@ -80,21 +86,25 @@ public class ControlsPlayer : MonoBehaviour {
 		// A button
 		if (Input.GetButtonDown ("360_AButton") || Input.GetKeyDown (KeyCode.Q)) {
 			print ("Je pèse sur le bouton A");
+			audioManager.PlaySound ("SFX_BoutonA");
 		}
 
 		// B button
 		if (Input.GetButtonDown ("360_BButton") || Input.GetKeyDown (KeyCode.W)) {
 			print ("Je pèse sur le bouton B");
+			audioManager.PlaySound ("SFX_BoutonB");
 		}
 
 		// X button
 		if (Input.GetButtonDown ("360_XButton") || Input.GetKeyDown (KeyCode.E)) {
 			print ("Je pèse sur le bouton X");
+			audioManager.PlaySound ("SFX_BoutonX");
 		}
 
 		// Y button
 		if (Input.GetButtonDown ("360_YButton") || Input.GetKeyDown (KeyCode.R)) {
 			print ("Je pèse sur le bouton Y");
+			audioManager.PlaySound ("SFX_BoutonY");
 		}
 
 		// Back button

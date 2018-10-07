@@ -13,12 +13,19 @@ public class LevelMenuScript : MonoBehaviour {
 
 	ControlsPlayer controlsplayerscript;
 
+	private AudioManager audioManager;
+
+
 	// Use this for initialization
 	void Start () {
 		//modePause = false;
 		//Time.timeScale = 1;
 
 		controlsplayerscript = playerNuage.GetComponent<ControlsPlayer> ();
+
+		audioManager = AudioManager.instance;
+		if (audioManager == null) {
+			Debug.LogError ("Attention, le AudioManager n'a pas été trouvé dans la scène.");}
 	}
 	
 	// Update is called once per frame

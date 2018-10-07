@@ -9,6 +9,24 @@ public class MainMenuScript : MonoBehaviour {
 	public GameObject canvasLearnMore;
 	public GameObject canvasCredits;
 
+	private AudioManager audioManager;
+
+
+	void Start (){
+		audioManager = AudioManager.instance;
+		if (audioManager == null) {
+			Debug.LogError ("Attention, le AudioManager n'a pas été trouvé dans la scène.");}
+	}
+
+	// JOUER UN SON QUAND JE CLIQUE
+	public void playClipButton () {
+		audioManager.PlaySound ("SFX_MenuButton");
+	}
+
+	public void playClipStart(){
+		audioManager.PlaySound ("SFX_MenuStart");
+	}
+
 
 	// POUR COMMENCER LE JEU
 	public void StartGame(){

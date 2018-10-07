@@ -7,6 +7,10 @@ TagManager:
   - student
   - Stop
   - Car
+  - A
+  - B
+  - X
+  - Y
   layers:
   - Default
   - TransparentFX

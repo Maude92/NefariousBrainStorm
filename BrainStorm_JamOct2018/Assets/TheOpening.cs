@@ -60,7 +60,7 @@ public class TheOpening : MonoBehaviour {
 		realPlayerSprite.enabled = true;
 		realPlayerCollider.enabled = true;
 		fakeplayerintro.SetActive (false);
-		controlsplayerscript.enabled = true;
+		//controlsplayerscript.enabled = true;
 		animYellow1.SetBool ("Run", true);
 		animYellow2.SetBool ("Run", true);
 		animBlue1.SetBool ("Run", true);
@@ -69,5 +69,7 @@ public class TheOpening : MonoBehaviour {
 		animGreen2.SetBool ("Run", true);
 		animPink.SetBool ("Run", true);
 		animRed.SetBool ("Run", true);
+		yield return new WaitForSeconds (2.5f);
+		controlsplayerscript.enabled = true;
 	}
 }

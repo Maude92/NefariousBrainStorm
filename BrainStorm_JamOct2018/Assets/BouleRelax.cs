@@ -32,11 +32,13 @@ public class BouleRelax : MonoBehaviour {
 	void OnTriggerStay2D (Collider col){
 
 		if (col.gameObject.tag == "A") {
-			animcar.SetBool ("Move", true);
+			if (Input.GetButtonDown ("360_AButton") || Input.GetKeyDown (KeyCode.Q)) {
+				print ("Je pèse sur le bouton A");
+			}	
 		}
-
-		if (Input.GetButtonDown ("360_AButton") || Input.GetKeyDown (KeyCode.Q)) {
-			print ("Je pèse sur le bouton A");
-		}
+			
 	}
+
+	//animcar.SetBool ("Move", true);
+
 }

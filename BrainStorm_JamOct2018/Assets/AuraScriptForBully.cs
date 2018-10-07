@@ -2,11 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovingCarScript : MonoBehaviour {
+public class AuraScriptForBully : MonoBehaviour {
 
-	public GameObject car;
-
-	Animator animcar;
 
 	private AudioManager audioManager;
 
@@ -21,9 +18,6 @@ public class MovingCarScript : MonoBehaviour {
 	Animator animAura;
 	Animator animcadre;
 	ControlsPlayer controlsplayerscript;
-	//public GameObject InstructionRespiration;
-	//Animator animTrigger;
-
 
 	// Use this for initialization
 	void Start () {
@@ -31,7 +25,6 @@ public class MovingCarScript : MonoBehaviour {
 		if (audioManager == null) {
 			Debug.LogError ("Attention, le AudioManager n'a pas été trouvé dans la scène.");}
 
-		animcar = car.GetComponent<Animator> ();
 		thiscollider = GetComponent<Collider2D> ();
 
 
@@ -40,14 +33,12 @@ public class MovingCarScript : MonoBehaviour {
 		animcadre = cadre.GetComponent<Animator> ();
 		controlsplayerscript = playerNuage.GetComponent<ControlsPlayer> ();
 		canBreath = false;
-		//animTrigger = InstructionRespiration.GetComponent<Animator> ();
 	}
-
-
+	
 	void OnTriggerEnter2D(Collider2D other){
 		if (other.gameObject.tag == "Player") {
-			animcar.SetBool ("Move", true);
-			audioManager.PlaySound ("SFX_VoitureRapide");
+			//animcar.SetBool ("Move", true);
+			//audioManager.PlaySound ("SFX_VoitureRapide");
 			StartCoroutine (ImScared ());
 			thiscollider.enabled = false;
 		}
@@ -60,8 +51,8 @@ public class MovingCarScript : MonoBehaviour {
 		animAura.SetBool ("Aura", true);
 		animcadre.SetBool ("Danger", true);
 		canBreath = true;
-		controlsplayerscript.maxSpeed = 0.5f;
-		yield return new WaitForSeconds (11f);
+		//controlsplayerscript.maxSpeed = 0.5f;
+		yield return new WaitForSeconds (15f);
 		StartCoroutine (GoBackToNormalSpeed());
 		//audioManager.PlaySound ("SFX_RespirationWin");
 		canBreath = false;

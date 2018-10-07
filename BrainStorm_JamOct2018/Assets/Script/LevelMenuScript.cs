@@ -16,6 +16,7 @@ public class LevelMenuScript : MonoBehaviour {
 	private AudioManager audioManager;
 
 
+
 	// Use this for initialization
 	void Start () {
 		//modePause = false;
@@ -45,6 +46,12 @@ public class LevelMenuScript : MonoBehaviour {
 //				controlsplayerscript.enabled = true;
 //			}
 //		}
+	}
+
+
+	// JOUER UN SON QUAND JE CLIQUE
+	public void playClipButton () {
+		audioManager.PlaySound ("SFX_MenuButton");
 	}
 
 	// POUR QUITTER LE JEU :(

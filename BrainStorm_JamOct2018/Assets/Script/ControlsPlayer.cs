@@ -27,7 +27,14 @@ public class ControlsPlayer : MonoBehaviour {
 
 //	LevelMenuScript levelmenuscript;
 	AuraScript aurascript;
+	MovingCarScript aurascript2;
+	AuraScriptForBully aurascript3v1;
+	AuraScriptForBully aurascript3v2;
 	Animator animaura;
+
+	public GameObject triggerZone2;
+	public GameObject triggerZone3v1;
+	public GameObject triggerZone3v2;
 
 	private AudioManager audioManager;
 
@@ -38,6 +45,10 @@ public class ControlsPlayer : MonoBehaviour {
 
 	//	levelmenuscript = canvasPause.GetComponent<LevelMenuScript> ();
 		aurascript = triggerZone1.GetComponent<AuraScript> ();
+		aurascript2 = triggerZone2.GetComponent<MovingCarScript> ();
+		aurascript3v1 = triggerZone3v1.GetComponent<AuraScriptForBully>();
+		aurascript3v2 = triggerZone3v2.GetComponent<AuraScriptForBully> ();
+
 		animaura = aura.GetComponent<Animator> ();
 
 		modePause = false;
@@ -58,7 +69,7 @@ public class ControlsPlayer : MonoBehaviour {
 	void Update () {
 		UserInputs ();
 
-		if (aurascript.canBreath == true && inspire == true) {
+		if ((aurascript.canBreath == true || aurascript2.canBreath ==true || aurascript3v1 == true || aurascript3v2 == true) && inspire == true) {
 		// change le scale pour inspirer
 			if (cadre.transform.localScale.x < maxScale) {
 				cadre.transform.localScale += new Vector3 (Time.deltaTime / timefade, Time.deltaTime / timefade, 0);
@@ -68,7 +79,7 @@ public class ControlsPlayer : MonoBehaviour {
 				//cadre.transform.localScale.z = 1;
 		//	}
 
-		} else if (aurascript.canBreath == true && inspire == false){
+		} else if ((aurascript.canBreath == true || aurascript2 == true || aurascript3v1 == true || aurascript3v2 == true) && inspire == false){
 			// change le scale pour expirer
 			if (cadre.transform.localScale.x > minScale) {
 				cadre.transform.localScale -= new Vector3 (Time.deltaTime / timefade, Time.deltaTime / timefade, 0);
@@ -83,6 +94,14 @@ public class ControlsPlayer : MonoBehaviour {
 		} else if (letsbreathbool == false){
 			letsbreath = 0;
 		}
+
+		if (inspire == false){
+			letsbreathbool = false;
+		}
+//		if (letsbreath >= 5) {
+//			letsbreath = 0;
+//			letsbreathbool = false;
+//		}
 	}
 
 	void FixedUpdate (){
@@ -145,7 +164,7 @@ public class ControlsPlayer : MonoBehaviour {
 		// Triggers
 		if ((Input.GetAxis ("360_TriggerL") > 0.001 && Input.GetAxis ("360_TriggerR") > 0.001)) {
 			print ("Je pèse sur les Triggers ");
-			if (aurascript.canBreath == true) {
+			if (aurascript.canBreath == true || aurascript2.canBreath == true || aurascript3v1 == true || aurascript3v2 == true) {
 				inspire = true;
 				StartCoroutine (BreathSoundWithTriggers ());
 //				if (Input.GetAxis ("360_TriggerL") == 0.9 && inspire == true) {
@@ -161,16 +180,11 @@ public class ControlsPlayer : MonoBehaviour {
 				animaura.SetBool ("Inspire", false);
 			}
 		} else if ((Input.GetAxis ("360_TriggerL") < 0.001 && Input.GetAxis ("360_TriggerR") < 0.001)) {
-			if (aurascript.canBreath == true) {
+			if (aurascript.canBreath == true || aurascript2.canBreath == true|| aurascript3v1 == true || aurascript3v2 == true) {
 				print ("Je suis censé expirer");
 				inspire = false;
-				StartCoroutine (BreathSoundWithTriggers ());
-//				if (Input.GetAxis ("360_TriggerL") == 0.8 && inspire == false) {
-//					audioManager.PlaySound ("SFX_Expire");
-//				}
-				//jerespire = true;
+				//StartCoroutine (BreathSoundWithTriggers ());
 				animaura.SetBool ("Inspire", false);
-			//	animaura.SetInteger ("Respiration", nombrederespiration);
 			} else {
 				print ("T'as pas à respirer maintenant");
 			//	jerespire = false;
@@ -185,13 +199,17 @@ public class ControlsPlayer : MonoBehaviour {
 		if (inspire == true && letsbreath == 1) {
 			audioManager.PlaySound ("SFX_Inspire");
 			print ("Je devrais entendre inspirer");
-			letsbreathbool = false;
-		} else if (inspire == false && letsbreath == 1) {
-			audioManager.PlaySound ("SFX_Expire");
+		} else if (inspire == false) {
+			//letsbreathbool = false;
+			//audioManager.PlaySound ("SFX_Expire");
 			print ("Je devrais entendre expirer");
-			letsbreathbool = false;
+			//letsbreathbool = false;
 		}
-		yield return new WaitForSeconds (0.01f);
+
+//		if (letsbreath >= 10) {
+//			letsbreathbool = false;
+//		}
+		yield return new WaitForSeconds (1f);
 		//letsbreathbool = false;
 	}
 }

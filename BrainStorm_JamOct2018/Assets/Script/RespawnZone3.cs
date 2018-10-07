@@ -24,6 +24,8 @@ public class RespawnZone3 : MonoBehaviour {
 	Collider2D collidertriggerbully1;
 	Collider2D collidertriggerbully2;
 
+	ControlsPlayer controlsplayerscript;
+
 	// Use this for initialization
 	void Start () {
 		animFondNoirRespawn = fondNoirRespawn.GetComponent<Animator> ();
@@ -32,6 +34,8 @@ public class RespawnZone3 : MonoBehaviour {
 
 		collidertriggerbully1 = triggergauche.GetComponent<Collider2D> ();
 		collidertriggerbully2 = triggerdroite.GetComponent<Collider2D> ();
+
+		controlsplayerscript = player.GetComponent<ControlsPlayer> ();
 	}
 	
 	// Update is called once per frame
@@ -47,6 +51,7 @@ public class RespawnZone3 : MonoBehaviour {
 
 	IEnumerator RespawnPlayerAndBullies(){
 		animFondNoirRespawn.SetBool ("Respawn", true);
+		controlsplayerscript.enabled = false;
 		yield return new WaitForSeconds (2f);
 		animbully2.SetBool ("Respawn", true);
 		animbully1.SetBool ("Respawn", true);
@@ -55,5 +60,7 @@ public class RespawnZone3 : MonoBehaviour {
 		bully1.transform.position = respawnpointbully1.transform.position;
 		bully2.transform.position = respawnpointbully2.transform.position;
 		player.transform.position = respawnpointplayer.transform.position;
+		yield return new WaitForSeconds (0.1f);
+		controlsplayerscript.enabled = true;
 	}
 }

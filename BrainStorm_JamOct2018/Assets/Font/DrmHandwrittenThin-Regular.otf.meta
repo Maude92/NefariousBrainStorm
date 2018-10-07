@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: f92b778fcf913124f8480728298798be
+timeCreated: 1538926465
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 300
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Drm Handwritten Thin
+  fontNames:
+  - Drm Handwritten Thin
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 01ddbf13bd03bf641990e4d198fb4d2a, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

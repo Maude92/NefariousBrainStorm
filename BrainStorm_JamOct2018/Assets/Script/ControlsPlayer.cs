@@ -185,11 +185,13 @@ public class ControlsPlayer : MonoBehaviour {
 		if (inspire == true && letsbreath == 1) {
 			audioManager.PlaySound ("SFX_Inspire");
 			print ("Je devrais entendre inspirer");
+			letsbreathbool = false;
 		} else if (inspire == false && letsbreath == 1) {
 			audioManager.PlaySound ("SFX_Expire");
 			print ("Je devrais entendre expirer");
+			letsbreathbool = false;
 		}
-		yield return new WaitForSeconds (0.2f);
-		letsbreathbool = false;
+		yield return new WaitForSeconds (0.01f);
+		//letsbreathbool = false;
 	}
 }

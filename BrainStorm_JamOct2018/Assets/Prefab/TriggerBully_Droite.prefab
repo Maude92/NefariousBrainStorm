@@ -35,7 +35,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1659868515575744}
   m_LocalRotation: {x: -0, y: -0, z: 0.65270936, w: 0.7576085}
-  m_LocalPosition: {x: 52.96, y: 41.9, z: -0.6932293}
+  m_LocalPosition: {x: 53.1, y: 41.62, z: -0.6932293}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -53,7 +53,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 4.69259, y: -1.5468826}
+  m_Offset: {x: 5.087604, y: -1.5468826}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -64,7 +64,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 6.7219343, y: 4.0937653}
+  m_Size: {x: 5.9319067, y: 4.0937653}
   m_EdgeRadius: 0
 --- !u!114 &114438849908307502
 MonoBehaviour:
@@ -77,5 +77,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 621a2fc49b7974c7abaa71cadc175b23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bully1: {fileID: 1860994782149462, guid: 4d35128afbaee4a57b10cf9de58ee6df, type: 2}
-  Bully2: {fileID: 1433444980592698, guid: 82c82a3e995ea44d28045c54871d4c5c, type: 2}
+  Bully1: {fileID: 0}
+  Bully2: {fileID: 0}
+  triggerGauche: {fileID: 0}
+  triggerDroite: {fileID: 1659868515575744}

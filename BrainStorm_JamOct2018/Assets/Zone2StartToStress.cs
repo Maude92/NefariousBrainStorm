@@ -4,18 +4,88 @@ using UnityEngine;
 
 public class Zone2StartToStress : MonoBehaviour {
 
+	public GameObject aura;
+	public GameObject playerNuage;
+	public GameObject cadre;
+	public bool canBreath;
+
+	Animator animAura;
+	Animator animcadre;
+	ControlsPlayer controlsplayerscript;
+
+	//public GameObject InstructionRespiration;
+	//Animator animTrigger;
+
+
 	// Use this for initialization
 	void Start () {
-		
+		animAura = aura.GetComponent<Animator> ();
+		animcadre = cadre.GetComponent<Animator> ();
+		controlsplayerscript = playerNuage.GetComponent<ControlsPlayer> ();
+		canBreath = false;
+
+		//animTrigger = InstructionRespiration.GetComponent<Animator> ();
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+//	// Update is called once per frame
+//	void Update () {
+//		
+//	}
 
 	void OnTriggerEnter2D (Collider2D other){
 		if (other.gameObject.tag == "Car") {
+			animAura.SetBool ("Aura", true);
+			animcadre.SetBool ("Danger", true);
+			canBreath = true;
+			controlsplayerscript.maxSpeed = 0.5f;
+
+			//animTrigger.SetBool ("Show", true);
 		}
+	}
+
+//	void OnTriggerExit2D (Collider2D other){
+//		if (other.gameObject.tag == "Player") {
+//			//controlsplayerscript.maxSpeed = 3f;
+//			StartCoroutine (GoBackToNormalSpeed());
+//			canBreath = false;
+//			animAura.SetBool ("Aura", false);
+//			animcadre.SetBool ("Danger", false);
+//
+//			animTrigger.SetBool ("Kill", true);
+//			animTrigger.SetBool ("Show", false);
+//		}
+//	}
+
+
+	IEnumerator GoBackToNormalSpeed (){
+		controlsplayerscript.maxSpeed = 0.6f;
+		yield return new WaitForSeconds (0.1f);
+		controlsplayerscript.maxSpeed = 0.7f;
+		yield return new WaitForSeconds (0.1f);
+		controlsplayerscript.maxSpeed = 0.8f;
+		yield return new WaitForSeconds (0.1f);
+		controlsplayerscript.maxSpeed = 0.9f;
+		yield return new WaitForSeconds (0.1f);
+		controlsplayerscript.maxSpeed = 1f;
+		yield return new WaitForSeconds (0.1f);
+		controlsplayerscript.maxSpeed = 1.2f;
+		yield return new WaitForSeconds (0.1f);
+		controlsplayerscript.maxSpeed = 1.4f;
+		yield return new WaitForSeconds (0.1f);
+		controlsplayerscript.maxSpeed = 1.6f;
+		yield return new WaitForSeconds (0.1f);
+		controlsplayerscript.maxSpeed = 1.8f;
+		yield return new WaitForSeconds (0.1f);
+		controlsplayerscript.maxSpeed = 2f;
+		yield return new WaitForSeconds (0.1f);
+		controlsplayerscript.maxSpeed = 2.2f;
+		yield return new WaitForSeconds (0.1f);
+		controlsplayerscript.maxSpeed = 2.4f;
+		yield return new WaitForSeconds (0.1f);
+		controlsplayerscript.maxSpeed = 2.6f;
+		yield return new WaitForSeconds (0.1f);
+		controlsplayerscript.maxSpeed = 2.8f;
+		yield return new WaitForSeconds (0.1f);
+		controlsplayerscript.maxSpeed = 3f;
 	}
 }

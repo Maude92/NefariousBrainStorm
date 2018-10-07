@@ -34,13 +34,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1203293583706260}
-  m_LocalRotation: {x: -0, y: -0, z: -0.1652561, w: 0.9862507}
-  m_LocalPosition: {x: 52.62, y: 47.93, z: -0.6932293}
+  m_LocalRotation: {x: -0, y: -0, z: -0.09175334, w: 0.99578184}
+  m_LocalPosition: {x: 52.29, y: 49.06, z: -0.6932293}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -19.024}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -10.529}
 --- !u!61 &61497857579802802
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -77,5 +77,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b884d21d0a2c24b1f96a4e2e0e2b61fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bully1: {fileID: 1860994782149462, guid: 4d35128afbaee4a57b10cf9de58ee6df, type: 2}
-  Bully2: {fileID: 1433444980592698, guid: 82c82a3e995ea44d28045c54871d4c5c, type: 2}
+  Bully1: {fileID: 0}
+  Bully2: {fileID: 0}
+  triggerGauche: {fileID: 1203293583706260}
+  triggerDroite: {fileID: 0}

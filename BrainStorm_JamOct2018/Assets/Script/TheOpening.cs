@@ -56,7 +56,7 @@ public class TheOpening : MonoBehaviour {
 
 	IEnumerator StartOfTheGame(){
 		controlsplayerscript.enabled = false;
-		yield return new WaitForSeconds (5f);
+		yield return new WaitForSeconds (4f);
 		realPlayerSprite.enabled = true;
 		realPlayerCollider.enabled = true;
 		fakeplayerintro.SetActive (false);

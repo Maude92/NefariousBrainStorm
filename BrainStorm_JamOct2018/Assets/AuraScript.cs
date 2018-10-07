@@ -6,14 +6,18 @@ public class AuraScript : MonoBehaviour {
 
 	public GameObject aura;
 	public GameObject playerNuage;
+	public GameObject cadre;
 	public bool canBreath;
 
 	Animator animAura;
+	Animator animcadre;
 	ControlsPlayer controlsplayerscript;
+
 
 	// Use this for initialization
 	void Start () {
 		animAura = aura.GetComponent<Animator> ();
+		animcadre = cadre.GetComponent<Animator> ();
 		controlsplayerscript = playerNuage.GetComponent<ControlsPlayer> ();
 		canBreath = false;
 	}
@@ -26,6 +30,7 @@ public class AuraScript : MonoBehaviour {
 	void OnTriggerEnter2D (Collider2D other){
 		if (other.gameObject.tag == "Player") {
 			animAura.SetBool ("Aura", true);
+			animcadre.SetBool ("Danger", true);
 			canBreath = true;
 			controlsplayerscript.maxSpeed = 0.5f;
 		}
@@ -37,6 +42,7 @@ public class AuraScript : MonoBehaviour {
 			StartCoroutine (GoBackToNormalSpeed());
 			canBreath = false;
 			animAura.SetBool ("Aura", false);
+			animcadre.SetBool ("Danger", false);
 		}
 	}
 

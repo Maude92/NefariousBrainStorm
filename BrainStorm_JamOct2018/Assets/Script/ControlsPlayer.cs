@@ -13,6 +13,15 @@ public class ControlsPlayer : MonoBehaviour {
 	public GameObject aura;
 	public GameObject triggerZone1;
 
+	public bool inspire;
+	//public bool jerespire;
+	public float timefade = 1f;
+	public GameObject cadre;
+
+	public float minScale = 0.65f;
+	public float maxScale = 1.5f;
+
+
 //	LevelMenuScript levelmenuscript;
 	AuraScript aurascript;
 	Animator animaura;
@@ -29,11 +38,34 @@ public class ControlsPlayer : MonoBehaviour {
 		modePause = false;
 		//nombrederespiration = 0;
 		Time.timeScale = 1;
+
+		inspire = false;
+		//jerespire = false;
 	}
-	
+	 
 	// Update is called once per frame
 	void Update () {
 		UserInputs ();
+
+		if (aurascript.canBreath == true && inspire == true) {
+		// change le scale pour inspirer
+			if (cadre.transform.localScale.x < maxScale) {
+				cadre.transform.localScale += new Vector3 (Time.deltaTime / timefade, Time.deltaTime / timefade, 0);
+			} //else if (cadre.transform.localScale.x >= maxScale) {
+			//	cadre.transform.localScale.x = maxScale;
+			//	cadre.transform.localScale.y = maxScale;
+				//cadre.transform.localScale.z = 1;
+		//	}
+
+		} else if (aurascript.canBreath == true && inspire == false){
+			// change le scale pour expirer
+			if (cadre.transform.localScale.x > minScale) {
+				cadre.transform.localScale -= new Vector3 (Time.deltaTime / timefade, Time.deltaTime / timefade, 0);
+			} //else if (cadre.transform.localScale.x <= minScale) {
+				//cadre.transform.localScale.x = minScale;
+				//cadre.transform.localScale.y = minScale;
+			//	cadre.transform.localScale.z = 1;
+			}
 	}
 
 	void FixedUpdate (){
@@ -94,18 +126,26 @@ public class ControlsPlayer : MonoBehaviour {
 			print ("Je pèse sur les Triggers ");
 			if (aurascript.canBreath == true) {
 				print ("Je suis censé inspirer");
+				inspire = true;
+				//jerespire = true;
 				animaura.SetBool ("Inspire", true);
 			} else {
 				print ("T'as pas à respirer maintenant");
+				//jerespire = false;
+				inspire = false;
 				animaura.SetBool ("Inspire", false);
 			}
 		} else if ((Input.GetAxis ("360_TriggerL") < 0.001 && Input.GetAxis ("360_TriggerR") < 0.001)) {
 			if (aurascript.canBreath == true) {
 				print ("Je suis censé expirer");
+				//jerespire = true;
+				inspire = false;
 				animaura.SetBool ("Inspire", false);
 			//	animaura.SetInteger ("Respiration", nombrederespiration);
 			} else {
 				print ("T'as pas à respirer maintenant");
+			//	jerespire = false;
+				inspire = false;
 				animaura.SetBool ("Inspire", false);
 			}
 		}

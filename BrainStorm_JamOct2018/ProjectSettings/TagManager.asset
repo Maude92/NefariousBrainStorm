@@ -11,6 +11,8 @@ TagManager:
   - B
   - X
   - Y
+  - RealCar
+  - Attention
   layers:
   - Default
   - TransparentFX

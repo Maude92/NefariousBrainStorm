@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TheOpening : MonoBehaviour {
 
+	private AudioManager audioManager;
+
 	public GameObject nuageyellow1;
 	public GameObject nuageyellow2;
 	public GameObject nuagebleu1;
@@ -47,6 +49,10 @@ public class TheOpening : MonoBehaviour {
 
 		realPlayerSprite = player.GetComponent<SpriteRenderer> ();
 		realPlayerCollider = player.GetComponent<Collider2D> ();
+
+		audioManager = AudioManager.instance;
+		if (audioManager == null) {
+			Debug.LogError ("Attention, le AudioManager n'a pas été trouvé dans la scène.");}
 	}
 	
 	// Update is called once per frame
@@ -61,6 +67,7 @@ public class TheOpening : MonoBehaviour {
 		realPlayerCollider.enabled = true;
 		fakeplayerintro.SetActive (false);
 		//controlsplayerscript.enabled = true;
+		audioManager.PlaySound ("SFX_FootstepsEffet");
 		animYellow1.SetBool ("Run", true);
 		animYellow2.SetBool ("Run", true);
 		animBlue1.SetBool ("Run", true);

@@ -21,6 +21,9 @@ public class ControlsPlayer : MonoBehaviour {
 	public float minScale = 0.65f;
 	public float maxScale = 1.5f;
 
+	public int letsbreath;
+	public bool letsbreathbool;
+
 
 //	LevelMenuScript levelmenuscript;
 	AuraScript aurascript;
@@ -43,6 +46,8 @@ public class ControlsPlayer : MonoBehaviour {
 
 		inspire = false;
 		//jerespire = false;
+		letsbreath = 0;
+		letsbreathbool = false;
 
 		audioManager = AudioManager.instance;
 		if (audioManager == null) {
@@ -72,6 +77,12 @@ public class ControlsPlayer : MonoBehaviour {
 				//cadre.transform.localScale.y = minScale;
 			//	cadre.transform.localScale.z = 1;
 			}
+
+		if (letsbreathbool == true) {
+			letsbreath++;
+		} else if (letsbreathbool == false){
+			letsbreath = 0;
+		}
 	}
 
 	void FixedUpdate (){
@@ -135,8 +146,12 @@ public class ControlsPlayer : MonoBehaviour {
 		if ((Input.GetAxis ("360_TriggerL") > 0.001 && Input.GetAxis ("360_TriggerR") > 0.001)) {
 			print ("Je pèse sur les Triggers ");
 			if (aurascript.canBreath == true) {
-				print ("Je suis censé inspirer");
 				inspire = true;
+				StartCoroutine (BreathSoundWithTriggers ());
+//				if (Input.GetAxis ("360_TriggerL") == 0.9 && inspire == true) {
+//					audioManager.PlaySound ("SFX_Inspire");
+//				}
+				print ("Je suis censé inspirer");
 				//jerespire = true;
 				animaura.SetBool ("Inspire", true);
 			} else {
@@ -148,8 +163,12 @@ public class ControlsPlayer : MonoBehaviour {
 		} else if ((Input.GetAxis ("360_TriggerL") < 0.001 && Input.GetAxis ("360_TriggerR") < 0.001)) {
 			if (aurascript.canBreath == true) {
 				print ("Je suis censé expirer");
-				//jerespire = true;
 				inspire = false;
+				StartCoroutine (BreathSoundWithTriggers ());
+//				if (Input.GetAxis ("360_TriggerL") == 0.8 && inspire == false) {
+//					audioManager.PlaySound ("SFX_Expire");
+//				}
+				//jerespire = true;
 				animaura.SetBool ("Inspire", false);
 			//	animaura.SetInteger ("Respiration", nombrederespiration);
 			} else {
@@ -159,5 +178,18 @@ public class ControlsPlayer : MonoBehaviour {
 				animaura.SetBool ("Inspire", false);
 			}
 		}
+	}
+
+	IEnumerator BreathSoundWithTriggers(){
+		letsbreathbool = true;
+		if (inspire == true && letsbreath == 1) {
+			audioManager.PlaySound ("SFX_Inspire");
+			print ("Je devrais entendre inspirer");
+		} else if (inspire == false && letsbreath == 1) {
+			audioManager.PlaySound ("SFX_Expire");
+			print ("Je devrais entendre expirer");
+		}
+		yield return new WaitForSeconds (0.2f);
+		letsbreathbool = false;
 	}
 }

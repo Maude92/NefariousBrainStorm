@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StartSound : MonoBehaviour {
-
+public class ExitSoundBreath : MonoBehaviour {
 
 	private AudioManager audioManager;
 
@@ -19,11 +18,16 @@ public class StartSound : MonoBehaviour {
 		thiscollider = GetComponent<Collider2D> ();
 	}
 
-
-	void OnTriggerEnter2D (Collider2D other){
-		if (other.gameObject.tag == "student") {
-			audioManager.PlaySound ("SFX_FootstepsEffet");
-			thiscollider.enabled = false;
+	void OnTriggerExit2D (Collider2D other){
+		if (other.gameObject.tag == "Player") {
+			audioManager.PlaySound ("SFX_RespirationWin");
+			//StartCoroutine (ExitThatCollider ());
+			//thiscollider.enabled = false;
 		}
 	}
+
+//	IEnumerator ExitThatCollider(){
+//		yield return new WaitForSeconds (5f);
+//		thiscollider.enabled = false;
+//	}
 }

@@ -13,6 +13,9 @@ public class AuraScript : MonoBehaviour {
 	Animator animcadre;
 	ControlsPlayer controlsplayerscript;
 
+	public GameObject InstructionRespiration;
+	Animator animTrigger;
+
 
 	// Use this for initialization
 	void Start () {
@@ -20,6 +23,8 @@ public class AuraScript : MonoBehaviour {
 		animcadre = cadre.GetComponent<Animator> ();
 		controlsplayerscript = playerNuage.GetComponent<ControlsPlayer> ();
 		canBreath = false;
+
+		animTrigger = InstructionRespiration.GetComponent<Animator> ();
 	}
 	
 	// Update is called once per frame
@@ -33,6 +38,8 @@ public class AuraScript : MonoBehaviour {
 			animcadre.SetBool ("Danger", true);
 			canBreath = true;
 			controlsplayerscript.maxSpeed = 0.5f;
+
+			animTrigger.SetBool ("Show", true);
 		}
 	}
 
@@ -43,6 +50,9 @@ public class AuraScript : MonoBehaviour {
 			canBreath = false;
 			animAura.SetBool ("Aura", false);
 			animcadre.SetBool ("Danger", false);
+
+			animTrigger.SetBool ("Kill", true);
+			animTrigger.SetBool ("Show", false);
 		}
 	}
 

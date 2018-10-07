@@ -14,6 +14,11 @@ public class BouleRelax : MonoBehaviour {
 	Animator animX;
 	Animator animY;
 
+	public bool AisHere = false;
+	public bool isBHere = false;
+	public bool isXHere = false;
+	public bool isYHere = false;
+
 
 	// Use this for initialization
 	void Start () {
@@ -26,54 +31,74 @@ public class BouleRelax : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+	
+//		if (isAHere == true && (Input.GetKeyDown (KeyCode.Q) || Input.GetButtonDown ("360_AButton"))) {
+//			animA.SetBool ("DestroyGreen", true);
+//		}
+
+//		if (animA.GetBool ("OnScreen") == true && (Input.GetKeyDown (KeyCode.Q) || Input.GetButtonDown ("360_AButton"))) {
+//			animA.SetBool ("DestryGreen", true);
+//		}
 	}
 
-	void OnTriggerStay2D (Collider2D col){
+	void OnTriggerEnter2D (Collider2D col){
 
 		if (col.gameObject.tag == "A") {
-			if (Input.GetButtonDown ("360_AButton") || Input.GetKeyDown (KeyCode.Q)) {
-				animA.SetBool ("DestroyGreen", true);
-			}	
+			AisHere = true;
+				
 		}
 
-		if (col.gameObject.tag == "B") {
-			if (Input.GetButtonDown ("360_BButton") || Input.GetKeyDown (KeyCode.W)) {
-				animB.SetBool ("DestroyRed", true);
-			}	
-		}
 
-		if (col.gameObject.tag == "X") {
-			if (Input.GetButtonDown ("360_XButton") || Input.GetKeyDown (KeyCode.E)) {
-				animX.SetBool ("DestroyBlue", true);
-			}	
-		}
 
-		if (col.gameObject.tag == "Y") {
-			if (Input.GetButtonDown ("360_YButton") || Input.GetKeyDown (KeyCode.R)) {
-				animY.SetBool ("DestroyYellow", true);
-			}	
-		}
+//		if (col.gameObject.tag == "B") {
+//			isBHere = true;
+//
+//			if (Input.GetButtonDown ("360_BButton") || Input.GetKeyDown (KeyCode.W)) {
+//				animB.SetBool ("DestroyRed", true);
+//			}	
+//		}
+//
+//		if (col.gameObject.tag == "X") {
+//			isXHere = true;
+//
+//			if (Input.GetButtonDown ("360_XButton") || Input.GetKeyDown (KeyCode.E)) {
+//				animX.SetBool ("DestroyBlue", true);
+//			}	
+//		}
+//
+//		if (col.gameObject.tag == "Y") {
+//			isYHere = true;
+//
+//			if (Input.GetButtonDown ("360_YButton") || Input.GetKeyDown (KeyCode.R)) {
+//				animY.SetBool ("DestroyYellow", true);
+//			}	
+//		}
 			
 	}
 
-	void OnTriggerExit2D (Collider2D col){
-		if (col.gameObject.tag == "A") {
-			animA.SetBool ("ReturnHome", true);
-		}
-
-		if (col.gameObject.tag == "B") {
-			animB.SetBool ("ReturnHome", true);
-		}
-
-		if (col.gameObject.tag == "X") {
-			animX.SetBool ("ReturnHome", true);
-		}
-
-		if (col.gameObject.tag == "Y") {
-			animY.SetBool ("ReturnHome", true);
+	void OnTriggerStay2D (Collider2D col){
+		if (AisHere == true && (Input.GetKeyDown (KeyCode.Q) || Input.GetButtonDown ("360_AButton"))) {
+			animA.SetBool ("DestroyGreen", true);
 		}
 	}
+
+//	void OnTriggerExit2D (Collider2D col){
+//		if (col.gameObject.tag == "A") {
+//			animA.SetBool ("ReturnHome", true);
+//		}
+//
+//		if (col.gameObject.tag == "B") {
+//			animB.SetBool ("ReturnHome", true);
+//		}
+//
+//		if (col.gameObject.tag == "X") {
+//			animX.SetBool ("ReturnHome", true);
+//		}
+//
+//		if (col.gameObject.tag == "Y") {
+//			animY.SetBool ("ReturnHome", true);
+//		}
+//	}
 
 	//animcar.SetBool ("Move", true);
 
